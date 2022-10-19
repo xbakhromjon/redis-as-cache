@@ -17,34 +17,4 @@ public class RedisConfig {
     JedisConnectionFactory jedisConnectionFactory() {
         return new JedisConnectionFactory();
     }
-
-    @Bean
-    public RedisTemplate<String, Item> redisTemplate() {
-        final RedisTemplate<String, Item> template = new RedisTemplate<String, Item>();
-        template.setConnectionFactory(jedisConnectionFactory());
-        return template;
-    }
-
-
-//    @Bean
-//    public RedisTemplate<String, Object> redisTemplate() {
-//        RedisTemplate<String, Object> template = new RedisTemplate<>();
-//        template.setConnectionFactory(jedisConnectionFactory());
-//        template.setKeySerializer(new StringRedisSerializer());
-//        template.setHashKeySerializer(new StringRedisSerializer());
-//        template.setValueSerializer(new JdkSerializationRedisSerializer());
-//        template.setEnableTransactionSupport(true);
-//        template.afterPropertiesSet();
-//        return template;
-//    }
-
-//    @Bean
-//    JedisConnectionFactory jedisConnectionFactory() {
-//        JedisConnectionFactory jedisConFactory
-//                = new JedisConnectionFactory();
-//        jedisConFactory.setHostName("localhost");
-//        jedisConFactory.setPort(6379);
-//        return jedisConFactory;
-//    }
-
 }
